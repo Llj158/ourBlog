@@ -1,7 +1,12 @@
 <template>
   <el-footer class="me-area">
     <div class="me-footer">
-
+      <h3>
+        2024 © OurBlog. by zhuoxinjie&&tuwei
+      </h3>
+      <p>
+        html5课程设计
+      </p>
     </div>
   </el-footer>
 </template>

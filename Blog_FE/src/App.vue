@@ -1,3 +1,4 @@
+
 <template>
   <div id="app">
     <router-view/>
@@ -18,7 +19,7 @@ export default {
 
 body {
 opacity: 0.8;
-	background: 80% 100%,0 0 url("../static/img/bg.png") fixed ;
+	background: 80% 100%,0 0 url("../static/img/background.png") fixed ;
 	font-weight: 400;
 	font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
 	line-height: 1.5;
@@ -41,4 +42,4 @@ body{position:relative;}
 .me-pull-right {
 	float: right;
 }
-</style>
+</style>   

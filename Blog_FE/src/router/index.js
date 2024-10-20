@@ -71,6 +71,17 @@ const router = new Router({
     {
       path: '/register',
       component: r => require.ensure([], () => r(require('@/views/Register')), 'register')
+    },
+    //新增
+    {
+      path: '/setting',
+      component: r => require.ensure([], () => r(require('@/views/Setting')),'setting')
+    },
+    //
+    {
+      path: '/texte',
+      component: r => require.ensure([], () => r(require('@/views/Texte')), 'texte')
+
     }
 
   ],

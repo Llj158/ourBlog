@@ -6,7 +6,7 @@
     </div>
     <div class="me-author-tool">
       <i @click="showTool(qq)" :title="qq.title" class="iconfont icon-qq"></i><br>
-      <span>1694522680@qq.com</span>
+      <span>42@qq.com</span>
     </div>
   </el-card>
 
@@ -17,7 +17,7 @@
     name: 'CardMe',
     data() {
       return {
-        qq: {title: 'QQ', message: '1694522680'},
+        qq: {title: 'QQ', message: '42'},
       }
     },
     methods: {

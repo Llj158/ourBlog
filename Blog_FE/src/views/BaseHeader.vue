@@ -8,7 +8,7 @@
         </router-link>
       </el-col>
 
-      <el-col v-if="!simple" :span="16">
+      <!-- <el-col v-if="!simple" :span="16">
         <el-menu :router=true menu-trigger="click" active-text-color="#5FB878" :default-active="activeIndex"
                  mode="horizontal">
           <el-menu-item index="/">首页</el-menu-item>
@@ -21,7 +21,46 @@
           </el-col>
 
         </el-menu>
-      </el-col>
+      </el-col> -->
+      
+      <el-col v-if="!simple" :span="16" 
+      >
+  <el-menu :router="true" menu-trigger="click" active-text-color="red" :default-active="activeIndex"
+           mode="horizontal">
+    <el-menu-item index="/" class="custom-menu-item">首页</el-menu-item>
+
+  
+  
+
+    <!-- <el-menu-item index="/category/all" class="custom-menu-item">
+      <i class="el-icon-share"></i>文章分类</el-menu-item>
+    <el-menu-item index="/tag/all" class="custom-menu-item">
+      <i class="el-icon-menu"></i>标签分类</el-menu-item> -->
+
+    <el-menu-item index="/archives" class="custom-menu-item">
+      <i class="el-icon-document"></i>文章归档</el-menu-item>
+
+    <el-col :span="4" :offset="0">
+      <el-menu-item index="/write" class="custom-menu-item"><i class="el-icon-edit"></i>写文章</el-menu-item>
+    </el-col>
+    <el-dropdown>
+  <el-menu-item >
+   <i class="el-icon-more"  ></i>  分类查看
+  </el-menu-item>
+  <el-dropdown-menu slot="dropdown">
+    <el-dropdown-item>  
+       <el-menu-item index="/category/all" class="custom-menu-item">
+      <i class="el-icon-share"></i>文章分类</el-menu-item></el-dropdown-item>
+      <el-menu-item index="/tag/all" class="custom-menu-item">
+      &nbsp; &nbsp; &nbsp; <i class="el-icon-menu"></i>标签分类</el-menu-item>
+    
+  </el-dropdown-menu>
+</el-dropdown>
+
+  </el-menu>
+</el-col>
+
+
 
       <template v-else>
         <slot></slot>
@@ -32,21 +71,31 @@
 
           <template v-if="!user.login">
             <el-menu-item index="/login">
-              <el-button type="text">登录</el-button>
+            <el-button round type="success"icon="el-icon-check"
+            size="mini"  >
+               登录</el-button>
             </el-menu-item>
             <el-menu-item index="/register">
-              <el-button type="text">注册</el-button>
+              <el-button round  icon="el-icon-edit" size="mini" type="warning">注册</el-button>
             </el-menu-item>
           </template>
 
           <template v-else>
+            <el-col>
             <el-submenu index>
               <template slot="title">
                 <img class="me-header-picture" :src="user.avatar"/>
               </template>
+
+              <el-menu-item   @click.native.prevent="$router.push('/setting')" >     <i class="el-icon-setting"></i>个人设置</el-menu-item>
+              <!-- <el-menu-item   @click.native.prevent="$router.push('/texte')" >     <i class="el-icon-setting"></i>个人展示</el-menu-item> -->
               <el-menu-item index @click="logout"><i class="el-icon-back"></i>退出</el-menu-item>
+              
             </el-submenu>
+            </el-col>
           </template>
+
+
         </el-menu>
       </el-col>
 
@@ -126,4 +175,9 @@
     vertical-align: middle;
     background-color: #3e889a;
   }
+
+  /* 添加 */
+  .custom-menu-item:hover {
+  color: #b8b45f !important; /* 金色 */
+}
 </style>

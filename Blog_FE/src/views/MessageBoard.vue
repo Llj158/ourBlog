@@ -32,6 +32,7 @@
 
 <style scoped>
   .me-message {
+    
   }
 
   .el-container {

@@ -1,38 +1,64 @@
 <template>
+
+
+  
   <div id="register" v-title data-title="注册">
     <!--<video preload="auto" class="me-video-player" autoplay="autoplay" loop="loop">
           <source src="../../static/vedio/sea.mp4" type="video/mp4">
       </video>-->
 
     <div class="me-login-box me-login-box-radius">
-      <h1>注册</h1>
+      <h1>注&nbsp;&nbsp;册</h1>
 
       <el-form ref="userForm" :model="userForm" :rules="rules">
         <el-form-item prop="account">
+          <div>输入用户名：</div>
           <el-input placeholder="用户名" v-model="userForm.account"></el-input>
         </el-form-item>
 
         <el-form-item prop="nickname">
+          <div>输入昵称：</div>
           <el-input placeholder="昵称" v-model="userForm.nickname"></el-input>
         </el-form-item>
 
         <el-form-item prop="password">
+          <div>输入密码：</div>
           <el-input placeholder="密码" type="password" v-model="userForm.password"></el-input>
         </el-form-item>
-
-        <el-form-item size="small" class="me-login-button">
+        <!-- 确认密码 -->
+        <el-form-item prop="confirmPassword">
+  <div>再次输入密码：</div>
+  <el-input placeholder="确认密码" type="password" v-model="userForm.confirmPassword"></el-input>
+</el-form-item>
+<!-- <el-form-item size="small" class="me-login-button">
           <el-button type="primary" @click.native.prevent="register('userForm')">注册</el-button>
-        </el-form-item>
+        </el-form-item> -->
+    
       </el-form>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;
+         <el-button type="primary" @click.native.prevent="register('userForm')">注册</el-button>
+ <!-- 重置 -->
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <el-button type="danger" @click.native.prevent="resetForm('userForm')">重置</el-button>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <el-button type="warning" @click.native.prevent="$router.push('/')">返回</el-button>
 
 
 
     </div>
   </div>
+
+
+
+
+
+
 </template>
 
 <script>
   import {register} from '@/api/login'
+import BaseFooter from '../components/BaseFooter.vue';
 
   export default {
     name: 'Register',
@@ -41,7 +67,9 @@
         userForm: {
           account: '',
           nickname: '',
-          password: ''
+          password: '',
+          // 新增字段
+          confirmPassword: '' // 新增字段
         },
         rules: {
           account: [
@@ -55,12 +83,27 @@
           password: [
             {required: true, message: '请输入密码', trigger: 'blur'},
             {max: 10, message: '不能大于10个字符', trigger: 'blur'}
-          ]
+            
+          ],
+          // 新增字段
+          confirmPassword: [
+        {required: true, message: '请再次输入密码', trigger: 'blur'},
+        {validator: this.confirmPasswordValidator, trigger: 'blur'}
+      ]
         }
 
       }
     },
     methods: {
+         // 新增字段
+         confirmPasswordValidator(rule, value, callback) {
+    if (value !== this.userForm.password) {
+      callback(new Error('两次输入密码不一致'));
+    } else {
+      callback();
+    }
+  },
+
       register(formName) {
         let that = this
         this.$refs[formName].validate((valid) => {
@@ -80,7 +123,18 @@
           }
         });
 
-      }
+      },
+      resetForm(formName) {
+    this.$confirm('确定重置输入吗？', '提示', {
+      confirmButtonText: '确定',
+      cancelButtonText: '取消',
+      type: 'warning'
+    }).then(() => {
+      this.$refs[formName].resetFields();
+    }).catch(() => {
+      // 取消操作，不执行任何操作
+    });
+  },
 
     }
   }
@@ -94,8 +148,8 @@
 
   .me-video-player {
     background-color: transparent;
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     object-fit: fill;
     display: block;
     position: absolute;
@@ -106,9 +160,9 @@
 
   .me-login-box {
     position: absolute;
-    width: 300px;
-    height: 320px;
-    background-color: white;
+    width: 350px;
+    height: 500px;
+    background-color: rgb(229, 217, 217);
     margin-top: 150px;
     margin-left: -180px;
     left: 50%;
