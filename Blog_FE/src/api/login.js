@@ -6,7 +6,7 @@ export function login(account, password) {
     password
   }
   return request({
-    url: '/login',
+    url: 'api/login',
     method: 'post',
     data
   })
@@ -15,7 +15,7 @@ export function login(account, password) {
 export function logout(token) {
   return request({
     headers: {'Authorization': token},
-    url: '/logout',
+    url: 'api/logout',
     method: 'get'
   })
 }
@@ -23,7 +23,7 @@ export function logout(token) {
 export function getUserInfo(token) {
   return request({
     headers: {'Authorization': token},
-    url: '/users/currentUser',
+    url: 'api/users/currentUser',
     method: 'get'
   })
 }
@@ -35,7 +35,7 @@ export function register(account, nickname, password) {
     password
   }
   return request({
-    url: '/register',
+    url: 'api/register',
     method: 'post',
     data
   })

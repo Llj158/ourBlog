@@ -2,35 +2,35 @@ import request from '@/request'
 
 export function getAllTags() {
   return request({
-    url: '/tags',
+    url: 'api/tags',
     method: 'get',
   })
 }
 
 export function getAllTagsDetail() {
   return request({
-    url: '/tags/detail',
+    url: 'api/tags/detail',
     method: 'get',
   })
 }
 
 export function getHotTags() {
   return request({
-    url: '/tags/hot',
+    url: 'api/tags/hot',
     method: 'get',
   })
 }
 
 export function getTag(id) {
   return request({
-    url: `/tags/${id}`,
+    url: `api/tags/${id}`,
     method: 'get',
   })
 }
 
 export function getTagDetail(id) {
   return request({
-    url: `/tags/detail/${id}`,
+    url: `api/tags/detail/${id}`,
     method: 'get',
   })
 }

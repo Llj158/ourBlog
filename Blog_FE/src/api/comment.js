@@ -3,7 +3,7 @@ import request from '@/request'
 
 export function getCommentsByArticle(id) {
   return request({
-    url: `/comments/article/${id}`,
+    url: `api/comments/article/${id}`,
     method: 'get'
   })
 }
@@ -11,7 +11,7 @@ export function getCommentsByArticle(id) {
 export function publishComment(comment,token) {
   return request({
     headers: {'Authorization': token},
-    url: '/comments/create/change',
+    url: 'api/comments/create/change',
     method: 'post',
     data: comment
   })
