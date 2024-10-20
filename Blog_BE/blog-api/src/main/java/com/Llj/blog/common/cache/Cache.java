@@ -3,7 +3,7 @@ package com.Llj.blog.common.cache;
 import java.lang.annotation.*;
 
 /**
- * @description：
+ * @description：缓存
  */
 @Target({ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)

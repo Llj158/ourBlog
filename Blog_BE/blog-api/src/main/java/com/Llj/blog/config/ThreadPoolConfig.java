@@ -9,7 +9,7 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import java.util.concurrent.Executor;
 
 /**
- * @description：
+ * @description：线程池设置
  */
 @Configuration
 @EnableAsync

@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @description：
+ * @description：登入拦截器
  */
 @Component
 @Slf4j

@@ -4,9 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- * @description：
- */
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

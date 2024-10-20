@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @description：
+ * @description：mybatisPlus拦截
  */
 @Configuration
 @MapperScan("com.Llj.blog.dao")

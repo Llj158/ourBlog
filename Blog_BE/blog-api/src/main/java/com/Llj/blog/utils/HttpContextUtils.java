@@ -1,7 +1,7 @@
 package com.Llj.blog.utils;
 
 /**
- * @description：
+ * @description：静态方法来获取当前的 HttpServletRequest 对象
  */
 
 import org.springframework.web.context.request.RequestContextHolder;

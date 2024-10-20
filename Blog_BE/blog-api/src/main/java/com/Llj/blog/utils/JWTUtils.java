@@ -11,12 +11,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @description：
+ * @description：jwt模板
  */
 
 public class JWTUtils {
 
-    private static final String jwtToken = "123456Mszlu!@#$$";
+    private static final String jwtToken = "810975isakey";
 
     public static String createToken(Long userId){
         Map<String,Object> claims = new HashMap<>();

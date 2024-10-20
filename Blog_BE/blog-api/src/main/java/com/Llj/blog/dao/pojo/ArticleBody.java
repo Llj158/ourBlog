@@ -3,7 +3,7 @@ package com.Llj.blog.dao.pojo;
 import lombok.Data;
 
 /**
- * @description：
+ * @description：文章内容
  */
 @Data
 public class ArticleBody {

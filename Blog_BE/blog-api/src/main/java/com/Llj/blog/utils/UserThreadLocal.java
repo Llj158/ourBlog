@@ -3,7 +3,7 @@ package com.Llj.blog.utils;
 import com.Llj.blog.dao.pojo.SysUser;
 
 /**
- * @description：
+ * @description：会话状态处理
  */
 public class UserThreadLocal {
     private UserThreadLocal(){}

@@ -1,8 +1,5 @@
 package com.Llj.blog.common.aop;
 
-/**
- * @description：
- */
 
 import com.Llj.blog.utils.HttpContextUtils;
 import com.Llj.blog.utils.IpUtils;

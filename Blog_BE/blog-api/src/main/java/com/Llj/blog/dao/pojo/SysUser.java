@@ -2,9 +2,7 @@ package com.Llj.blog.dao.pojo;
 
 import lombok.Data;
 
-/**
- * @description：
- */
+
 @Data
 public class SysUser {
     private Long id;

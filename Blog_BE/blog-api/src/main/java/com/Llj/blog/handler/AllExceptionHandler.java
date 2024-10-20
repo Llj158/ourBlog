@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * @description：
+ * @description：异常处理
  */
 @ControllerAdvice
 public class AllExceptionHandler {
